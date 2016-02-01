@@ -22,7 +22,7 @@ def get_device_location(gpsPoints):
     aMatrix = matrix(aRows)
     bMatrix = matrix(bRows)
     solution = lstsq(aMatrix, bMatrix)[0]
-    return {"x": solution.item(0), "y": solution.item(1), "z": solution.item(2), "sigPower": solution.item(3)}
+    return {"x": solution.item(0), "y": solution.item(1), "z": solution.item(2), "sigPower": solution.item(3)**0.5}
 
 
 gpsPoints, exactPos = get_values(7)
